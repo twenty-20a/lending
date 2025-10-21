@@ -63,3 +63,6 @@ document.querySelectorAll('[data-start]').forEach(b=>{
 document.querySelector('[data-close]').addEventListener('click', ()=>{
   document.querySelector('#quiz').classList.add('hidden');
 });
+
+gsap.from('.card',{opacity:0,y:40,duration:0.6,stagger:0.15,scrollTrigger:'.cards'});
+gsap.from('.hero-content',{opacity:0,y:-20,duration:0.8});
