@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" rx="24" fill="rgba(255,255,255,0.03)"/>
+  <g transform="translate(0,-10)">
+    <path d="M40,290 Q180,180 320,260 T600,240" fill="none" stroke="#2B59B0" stroke-width="10" opacity=".35"/>
+    <circle cx="140" cy="210" r="34" fill="#2B59B0"/>
+    <rect x="110" y="230" width="60" height="70" rx="14" fill="#3B3B3D"/>
+    <circle cx="320" cy="200" r="30" fill="#5e8bff"/>
+    <rect x="290" y="220" width="60" height="70" rx="14" fill="#3B3B3D"/>
+    <circle cx="500" cy="230" r="26" fill="#2B59B0"/>
+    <rect x="474" y="248" width="52" height="60" rx="12" fill="#3B3B3D"/>
+    <text x="24" y="48" font-family="Inter" font-size="28" fill="#fff" opacity=".9">Детская зона</text>
+  </g>
+</svg>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Park — подарок за 60 секунд</title>
+  <meta name="description" content="Ответь на 3 коротких вопроса и забери подарок в Happy Park." />
+  <link rel="preload" href="assets/fonts/Inter-VariableFont_slnt,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="cursor"></div>
+  <header class="nav glass">
+    <div class="brand">
+      <img src="assets/svg/logo.svg" alt="Happy Park" class="logo">
+      <span>Happy Park</span>
+    </div>
+    <nav>
+      <a href="#quiz" class="btn primary" data-start>Получить подарок</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <h1><span class="grad">Подарок</span> за 3 ответа</h1>
+      <p>Сканировал QR — уже близко. 60 секунд и подарок у стойки выдачи.</p>
+      <div class="cta">
+        <button class="btn primary xl" data-start>Начать</button>
+        <a href="#park" class="btn ghost">О центре</a>
+      </div>
+      <div class="badges">
+        <div class="badge"><img src="assets/svg/ico-safe.svg" alt="">Безопасно</div>
+        <div class="badge"><img src="assets/svg/ico-timer.svg" alt="">1 минута</div>
+        <div class="badge"><img src="assets/svg/ico-gift.svg" alt="">Гарантированный приз</div>
+      </div>
+    </div>
+    <div class="blob-wrap">
+      <svg class="blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#2B59B0"/>
+            <stop offset="100%" stop-color="#3B3B3D"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#g1)">
+          <animate attributeName="d" dur="18s" repeatCount="indefinite"
+            values="
+            M417,309Q398,418,309,437Q220,456,146,393Q72,330,93,240Q114,150,201,111Q288,72,377,113Q466,154,446,247Q427,300,417,309Z;
+            M421,315Q383,430,274,440Q165,450,118,352Q71,254,128,176Q185,98,284,88Q383,78,428,169Q472,260,421,315Z;
+            M417,309Q398,418,309,437Q220,456,146,393Q72,330,93,240Q114,150,201,111Q288,72,377,113Q466,154,446,247Q427,300,417,309Z
+            " />
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <section id="quiz" class="quiz glass hidden" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <button class="close" data-close aria-label="Закрыть">×</button>
+    <h2 id="quizTitle">3 вопроса — и подарок твой</h2>
+
+    <form id="quizForm">
+      <div class="step active" data-step="1">
+        <p class="q">1) Сколько вам лет?</p>
+        <label class="opt"><input type="radio" name="age" value="3-6" required>3–6</label>
+        <label class="opt"><input type="radio" name="age" value="7-10">7–10</label>
+        <label class="opt"><input type="radio" name="age" value="11-14">11–14</label>
+        <label class="opt"><input type="radio" name="age" value="15+">15+</label>
+      </div>
+
+      <div class="step" data-step="2">
+        <p class="q">2) Что больше всего интересно?</p>
+        <label class="opt"><input type="radio" name="interest" value="kids-zone" required>Детская зона</label>
+        <label class="opt"><input type="radio" name="interest" value="autodrome">Автодром</label>
+        <label class="opt"><input type="radio" name="interest" value="events">Праздники с мишками</label>
+      </div>
+
+      <div class="step" data-step="3">
+        <p class="q">3) Когда планируете прийти?</p>
+        <label class="opt"><input type="radio" name="time" value="weekday" required>Будни до 16:00</label>
+        <label class="opt"><input type="radio" name="time" value="evening">После 16:00</label>
+        <label class="opt"><input type="radio" name="time" value="weekend">Выходные</label>
+      </div>
+
+      <div class="controls">
+        <button class="btn ghost" type="button" data-prev>Назад</button>
+        <button class="btn primary" type="button" data-next>Дальше</button>
+        <button class="btn success hidden" type="submit" id="finishBtn">Получить подарок</button>
+      </div>
+      <p class="policy">Нажимая “Получить подарок”, вы соглашаетесь с <a href="#policy">правилами акции</a>.</p>
+    </form>
+  </section>
+
+  <section id="park" class="park">
+    <h2 class="center">Что у нас есть</h2>
+    <div class="cards">
+      <article class="card tilt">
+        <img src="assets/svg/kids_play.svg" alt="Детская зона">
+        <h3>Детская зона</h3>
+        <p>Горки, кубики, мягкие лабиринты, настольные игры. Безопасно и чисто.</p>
+      </article>
+      <article class="card tilt">
+        <img src="assets/svg/autodrome.svg" alt="Автодром">
+        <h3>Автодром</h3>
+        <p>Электро-машинки для детей. Тайминг по картам. Трасса с подсветкой.</p>
+      </article>
+      <article class="card tilt">
+        <img src="assets/svg/bears_event.svg" alt="Праздники с мишками">
+        <h3>Праздники с мишками</h3>
+        <p>Аниматоры в костюмах плюшевых мишек. Танцы, конкурсы, фотозона.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="claim" class="claim hidden glass">
+    <h2>Готово. Подарок зарезервирован</h2>
+    <p class="ticket">Покажи этот экран на стойке выдачи в течение 24 часов.</p>
+    <div class="code" id="claimCode" aria-label="Код подарка"></div>
+    <div class="cta">
+      <a href="#park" class="btn ghost">Посмотреть зоны</a>
+      <a href="https://example.com" class="btn primary" id="goSite" target="_blank" rel="noopener">Перейти на сайт центра</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© Happy Park. Правила акции по запросу на стойке. Сделано без трекинга.</p>
+  </footer>
+
+  <script>window.HP_CONFIG={"accent":"#2B59B0"};</script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/quiz.js"></script>
+</body>
+</html>
