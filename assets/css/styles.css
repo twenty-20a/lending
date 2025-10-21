@@ -105,3 +105,9 @@ body{
 .footer{padding:24px; text-align:center; opacity:.7}
 
 #cursor{position:fixed; width:10px; height:10px; border-radius:50%; background:var(--accent); pointer-events:none; mix-blend-mode:screen; opacity:.7; z-index:200; transform:translate(-50%, -50%) scale(1)}
+
+@media (max-width:768px){
+  .hero h1{font-size:32px}
+  .cards{grid-template-columns:1fr}
+  .quiz{width:95vw;height:auto;top:10vh}
+}
